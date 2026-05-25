@@ -1,0 +1,54 @@
+{
+  "printifyWhitelist": [],
+  "products": [],
+  "freeDownloads": [
+    {
+      "id": "free-001",
+      "title": "Anxiety & Restlessness",
+      "description": "Calm your mind, soothe your body, and find peace from within with this guided hypnosis audio session by Rick Senninger.",
+      "image": "images/mp3_anxiety_restlessness.webp",
+      "file": "audio/Relaxation_and_Rejuvenation.mp3",
+      "type": "MP3 Audio"
+    },
+    {
+      "id": "free-002",
+      "title": "Relaxation & Sleep",
+      "description": "Drift into deep, restorative sleep with this guided relaxation session by Rick Senninger. Perfect for nightly use.",
+      "image": "images/mp3_relaxation_sleep.webp",
+      "file": "audio/Relaxation_and_Sleep.mp3",
+      "type": "MP3 Audio"
+    },
+    {
+      "id": "free-003",
+      "title": "Confidence",
+      "description": "Build unshakable confidence with this powerful guided session. Transform self-doubt into self-assurance.",
+      "image": "images/mp3_confidence.webp",
+      "file": "audio/Confidence.mp3",
+      "type": "MP3 Audio"
+    },
+    {
+      "id": "free-004",
+      "title": "Relaxation & Rejuvenation",
+      "description": "Restore your energy and sense of calm with this deeply relaxing guided hypnosis session by Rick Senninger.",
+      "image": "images/mp3_relaxation_rejuvenation.webp",
+      "file": "audio/Relaxation_and_Rejuvenation.mp3",
+      "type": "MP3 Audio"
+    },
+    {
+      "id": "free-005",
+      "title": "The TIP PIT Method Defined",
+      "description": "A white paper by Richard L. Senninger defining the TIP PIT Client-Based Performance Method — a framework for transforming individual performance from the inside out.",
+      "image": "images/TIP_PIT_Method_thumbnail.webp",
+      "file": "TIP_PIT_Method_Defined.pdf",
+      "type": "PDF Download"
+    },
+    {
+      "id": "free-006",
+      "title": "Life After Life? — Constrained Mosaic Convergence (CMC) Method",
+      "description": "An interdisciplinary white paper by Richard L. Senninger challenging the scientific premise that life concludes with the cessation of brain activity — drawing from Physics, Psychology, Humanities, and Biology.",
+      "image": "images/White_Paper_Life_After_Life.webp",
+      "file": "Life_After_Life_CMC_Method_White_Paper.pdf",
+      "type": "PDF Download"
+    }
+  ]
+}
