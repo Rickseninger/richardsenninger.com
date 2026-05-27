@@ -3442,3 +3442,22 @@ body.cart-open .subscribe-toast {
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* Media coordinator contact block — used in Speaker & Media page */
+.media-coordinator-block {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(13, 27, 46, 0.55);
+  border: 1px solid rgba(201, 149, 42, 0.30);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  line-height: 1.9;
+  color: var(--gold-light);
+}
+.media-coordinator-block a {
+  color: var(--gold);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+.media-coordinator-block a:hover { color: var(--gold-light); }

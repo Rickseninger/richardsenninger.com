@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block API endpoints from crawl
+Disallow: /api/
+
+Sitemap: https://richardlsenninger.com/sitemap.xml
