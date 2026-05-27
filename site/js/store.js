@@ -87,7 +87,9 @@
   // Product fetching & rendering
   // ---------------------------------------------------------------------------
   function fetchProducts() {
-    return fetch('/api/products')
+    // Cache-bust so admin edits to products.json show up on next page load instead
+    // of being held back for 5 min by the server's Cache-Control header
+    return fetch('/api/products?t=' + Date.now(), { cache: 'no-store' })
       .then(function (res) {
         if (!res.ok) throw new Error('Network error');
         return res.json();

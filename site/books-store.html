@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books, Resources &amp; Fun Store | Richard L. Senninger</title>
     <meta name="description" content="Shop Rick Senninger's books, audio sessions, and free downloads. Transformative reads, curated resources, and exclusive items from Richard L. Senninger.">
-    <link rel="stylesheet" href="css/styles.css?v=1">
-    <link rel="preload" as="fetch" href="/api/products" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="css/styles.css?v=18">
     <link rel="preconnect" href="https://images.printify.com" crossorigin>
     <link rel="dns-prefetch" href="https://images.printify.com">
 </head>
@@ -14,47 +16,47 @@
 
     <header>
         <div class="award-banner">
-            3x National Award for Excellence in Family Service &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
+            3x National Award for Excellence &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
         </div>
-        <div class="header-top">
-            <div class="header-brand">
-                <picture>
-                    <img src="images/About_Rick_Image_ref.png" alt="Richard L. Senninger" class="header-photo-img" loading="eager">
-                </picture>
-                <div class="header-identity">
-                    <div class="header-signature">Richard L. Senninger</div>
+        <div class="header-main">
+            <div class="header-brand"><div class="header-identity">
+                    <img src="images/rick-signature.svg?v=2" alt="Richard L. Senninger" class="header-signature">
                     <div class="header-tagline">Transform Your Life</div>
                 </div>
             </div>
-            <div class="contact-info">
-                <div class="phone"><a href="tel:407-490-5022">407-490-5022</a></div>
-            </div>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">MENU</button>
-        <nav>
+            <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="meet-rick.html">MEET RICK</a></li>
-                <li><a href="speaker-media.html">SPEAKER &amp; MEDIA</a></li>
-                <li><a href="podcasts-video.html">PODCASTS &amp; VIDEO</a></li>
+                <li><a href="speaker-media.html">MEDIA</a></li>
+                <li><a href="podcasts-video.html" class="nav-tiptv" aria-label="TIPTV"><span class="tiptv-wordmark">TIP TV</span></a></li>
                 <li><a href="books-store.html" class="active">BOOKS &amp; STORE</a></li>
                 <li><a href="contact.html">CONTACT RICK</a></li>
+                <li class="nav-phone-item"><a href="tel:407-490-5022">407-490-5022</a></li>
             </ul>
-        </nav>
+            </nav>
+            <div class="header-end">
+                <a href="tel:407-490-5022" class="phone">407-490-5022</a>
+                <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
+            </div>
+        </div>
     </header>
 
     <main>
 
-        <!-- Store Banner -->
-        <div class="store-banner" style="padding-top: 160px;">
-            <div class="store-banner-content">
-                <h2>Books, Resources &amp; Fun Store</h2>
-                <p>Transformative reads, curated resources, and exclusive items from Rick Senninger</p>
+        <!-- ===== Page hero ===== -->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <span class="page-hero-eyebrow">Books &amp; Store</span>
+                <h1>Resources, Books &amp; <em>Audio</em></h1>
+                <div class="page-hero-rule"></div>
+                <p class="page-hero-sub">Transformative reads, curated resources, and exclusive items from Rick Senninger.</p>
             </div>
-        </div>
+        </section>
 
-        <!-- Featured Book -->
-        <section style="background: var(--navy-surface); max-width:100%; width:100%; padding: 4rem 2rem;">
+        <!-- Featured Book — spotlight treatment -->
+        <section class="spotlight anim-up" style="max-width:100%; width:100%; padding: 4rem 2rem;">
+            <div class="spotlight-burst" aria-hidden="true" style="top:50%;"></div>
             <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:3rem; flex-wrap:wrap;">
                 <div style="flex-shrink:0; width:220px;">
                     <!-- TODO: Add 10,000 Funerals book cover image -->
@@ -69,7 +71,7 @@
                     <p style="color:var(--gold); font-size:0.8rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:0.75rem; font-weight:700;">BOOKS</p>
                     <h2 style="font-family:var(--font-serif); color:var(--white); font-size:clamp(1.6rem,2.5vw,2.2rem); margin-bottom:0.5rem; font-weight:700;"><em>10,000 Funerals &ndash; 5 Minute Life Lessons</em></h2>
                     <p style="color:var(--text-secondary); margin-bottom:1.25rem; font-size:1rem;">by Richard L. Senninger</p>
-                    <p style="color:var(--off-white); line-height:1.8; margin-bottom:2rem;">A nationally acclaimed collection of life wisdom drawn from over 10,000 family services &mdash; distilled into powerful, practical 5-minute lessons.</p>
+                    <p style="color:var(--off-white); line-height:1.8; margin-bottom:2rem;">A nationally acclaimed collection of life wisdom drawn from over 10,000 funerals &mdash; distilled into powerful, practical 5-minute lessons.</p>
                     <!-- TODO: Add book purchase link -->
                     <a href="contact.html" class="cta-button-gold">Contact to Order</a>
                 </div>
@@ -77,7 +79,7 @@
         </section>
 
         <!-- Free Downloads Section (populated by store.js) -->
-        <section class="free-downloads-section">
+        <section class="free-downloads-section anim-up">
             <div class="free-downloads-header">
                 <h2>Free Downloads &amp; Audio Sessions</h2>
                 <p>Complimentary resources from Rick Senninger &mdash; white papers, research, and guided audio sessions</p>
@@ -139,6 +141,16 @@
                         <p style="color:var(--text-muted); font-size:0.9rem; margin-top:1rem;">Exclusive merchandise designs in progress</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ===== Unified inner-page CTA ===== -->
+        <section>
+            <div class="page-cta anim-up">
+                <div class="page-cta-eyebrow">Place an Order</div>
+                <h3>Looking for Something <em>Personal?</em></h3>
+                <p>Speak directly with Rick about books, audio sessions, or one-on-one work.</p>
+                <a href="tel:407-490-5022" class="cta-button-gold">Call 407-490-5022</a>
             </div>
         </section>
 
@@ -286,13 +298,27 @@
         </div>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+${TOAST_HTML}
+        <!-- Inspired Thinking Community subscribe toast -->
+    <div class="subscribe-toast" role="dialog" aria-labelledby="subscribe-toast-title" aria-describedby="subscribe-toast-desc">
+        <button class="subscribe-toast-close" aria-label="Close subscribe panel">&times;</button>
+        <div class="subscribe-toast-eyebrow">Inspired Thinking</div>
+        <h4 id="subscribe-toast-title">Join Rick&#39;s <em>Circle</em></h4>
+        <p id="subscribe-toast-desc">Insights on consciousness, hypnotherapy, and human transformation &mdash; delivered to your inbox.</p>
+        <form class="subscribe-toast-form" novalidate>
+            <input type="email" name="email" placeholder="your.com" required autocomplete="email" aria-label="Email address">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="subscribe-toast-feedback" aria-live="polite"></div>
+    </div>
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
     <script>
         const btn = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => { btn.classList.toggle('visible', window.scrollY > 400); });
         const hdr = document.querySelector('header');
         window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 80); });
     </script>
-    <script src="js/store.js?v=1"></script>
+    <script src="js/animations.js?v=7"></script>
+    <script src="js/store.js?v=2"></script>
 </body>
 </html>

@@ -5,57 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Rick Senninger | 407-490-5022</title>
     <meta name="description" content="Contact Richard L. Senninger directly at 407-490-5022. Speak to a real person — no chatbots, no AI — and schedule your no-cost evaluation today.">
-    <link rel="stylesheet" href="css/styles.css?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="css/styles.css?v=18">
 </head>
 <body>
 
     <header>
         <div class="award-banner">
-            3x National Award for Excellence in Family Service &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
+            3x National Award for Excellence &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
         </div>
-        <div class="header-top">
-            <div class="header-brand">
-                <picture>
-                    <img src="images/About_Rick_Image_ref.png" alt="Richard L. Senninger" class="header-photo-img" loading="eager">
-                </picture>
-                <div class="header-identity">
-                    <div class="header-signature">Richard L. Senninger</div>
+        <div class="header-main">
+            <div class="header-brand"><div class="header-identity">
+                    <img src="images/rick-signature.svg?v=2" alt="Richard L. Senninger" class="header-signature">
                     <div class="header-tagline">Transform Your Life</div>
                 </div>
             </div>
-            <div class="contact-info">
-                <div class="phone"><a href="tel:407-490-5022">407-490-5022</a></div>
-            </div>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">MENU</button>
-        <nav>
+            <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="meet-rick.html">MEET RICK</a></li>
-                <li><a href="speaker-media.html">SPEAKER &amp; MEDIA</a></li>
-                <li><a href="podcasts-video.html">PODCASTS &amp; VIDEO</a></li>
+                <li><a href="speaker-media.html">MEDIA</a></li>
+                <li><a href="podcasts-video.html" class="nav-tiptv" aria-label="TIPTV"><span class="tiptv-wordmark">TIP TV</span></a></li>
                 <li><a href="books-store.html">BOOKS &amp; STORE</a></li>
                 <li><a href="contact.html" class="active">CONTACT RICK</a></li>
+                <li class="nav-phone-item"><a href="tel:407-490-5022">407-490-5022</a></li>
             </ul>
-        </nav>
+            </nav>
+            <div class="header-end">
+                <a href="tel:407-490-5022" class="phone">407-490-5022</a>
+                <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
+            </div>
+        </div>
     </header>
 
     <main>
 
-        <div class="page-banner-container">
-            <div class="banner-overlay">
-                <h1>Contact Rick</h1>
+        <!-- ===== Page hero ===== -->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <span class="page-hero-eyebrow">Get in Touch</span>
+                <h1>A Real Person &mdash; <em>Every Time</em></h1>
+                <div class="page-hero-rule"></div>
+                <p class="page-hero-sub">No machines, no chatbots, no AI &mdash; just personal attention from a listening professional.</p>
             </div>
-        </div>
+        </section>
 
-        <section>
+        <section class="anim-up">
             <div class="contact-content">
 
-                <div class="contact-quote">
-                    &ldquo;At RichardLSenninger.com, we believe in genuine human connection. When you reach out, you&rsquo;ll speak directly with a real person &mdash; no machines, no chatbots, no AI. Just personal attention from a listening professional.&rdquo;
+                <div class="contact-quote anim-fade">
+                    &ldquo;Rick believes in genuine human connection. When you reach out, you&rsquo;ll speak directly with a real person &mdash; no machines, no chatbots, no AI. Just personal attention from a listening professional.&rdquo;
                 </div>
 
-                <div class="contact-steps">
+                <div class="contact-steps anim-up">
                     <h3>How It Works</h3>
 
                     <div class="step">
@@ -79,13 +83,16 @@
                     </div>
                 </div>
 
-                <div class="center" style="margin-top: 3rem;">
-                    <p style="font-size: 1.2rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">
-                        Ready to start your transformation? Take the first step today.
-                    </p>
-                    <a href="tel:407-490-5022" class="cta-button-gold" style="font-size: 1.1rem; padding: 1rem 3rem;">Call 407-490-5022</a>
-                </div>
+            </div>
+        </section>
 
+        <!-- ===== Unified inner-page CTA ===== -->
+        <section>
+            <div class="page-cta anim-up">
+                <div class="page-cta-eyebrow">Begin the Conversation</div>
+                <h3>Take the <em>First Step</em> Today</h3>
+                <p>Your transformation begins with a single phone call.</p>
+                <a href="tel:407-490-5022" class="cta-button-gold">Call 407-490-5022</a>
             </div>
         </section>
 
@@ -103,12 +110,26 @@
         </div>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+${TOAST_HTML}
+        <!-- Inspired Thinking Community subscribe toast -->
+    <div class="subscribe-toast" role="dialog" aria-labelledby="subscribe-toast-title" aria-describedby="subscribe-toast-desc">
+        <button class="subscribe-toast-close" aria-label="Close subscribe panel">&times;</button>
+        <div class="subscribe-toast-eyebrow">Inspired Thinking</div>
+        <h4 id="subscribe-toast-title">Join Rick&#39;s <em>Circle</em></h4>
+        <p id="subscribe-toast-desc">Insights on consciousness, hypnotherapy, and human transformation &mdash; delivered to your inbox.</p>
+        <form class="subscribe-toast-form" novalidate>
+            <input type="email" name="email" placeholder="your.com" required autocomplete="email" aria-label="Email address">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="subscribe-toast-feedback" aria-live="polite"></div>
+    </div>
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
     <script>
         const btn = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => { btn.classList.toggle('visible', window.scrollY > 400); });
         const hdr = document.querySelector('header');
         window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 80); });
     </script>
+    <script src="js/animations.js?v=7"></script>
 </body>
 </html>

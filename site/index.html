@@ -5,65 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard L. Senninger | Clinical Hypnotherapist, Author &amp; Speaker</title>
     <meta name="description" content="Richard L. Senninger — 3x National Award-Winning Clinical Hypnotherapist, Author of 10,000 Funerals, Speaker, and Consciousness Researcher based in Orlando, FL.">
-    <link rel="stylesheet" href="css/styles.css?v=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="css/styles.css?v=18">
 </head>
 <body>
 
     <header>
         <div class="award-banner">
-            3x National Award for Excellence in Family Service &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
+            3x National Award for Excellence &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
         </div>
-        <div class="header-top">
-            <div class="header-brand">
-                <!-- TODO: Replace with final approved headshot for header -->
-                <picture>
-                    <img src="images/About_Rick_Image_ref.png" alt="Richard L. Senninger" class="header-photo-img" loading="eager">
-                </picture>
-                <div class="header-identity">
-                    <!-- TODO: Replace with Rick's actual signature image when provided -->
-                    <div class="header-signature">Richard L. Senninger</div>
+        <div class="header-main">
+            <div class="header-brand"><div class="header-identity">
+                    <img src="images/rick-signature.svg?v=2" alt="Richard L. Senninger" class="header-signature">
                     <div class="header-tagline">Transform Your Life</div>
                 </div>
             </div>
-            <div class="contact-info">
-                <div class="phone"><a href="tel:407-490-5022">407-490-5022</a></div>
-            </div>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">MENU</button>
-        <nav>
+            <nav>
             <ul>
                 <li><a href="index.html" class="active">HOME</a></li>
                 <li><a href="meet-rick.html">MEET RICK</a></li>
-                <li><a href="speaker-media.html">SPEAKER &amp; MEDIA</a></li>
-                <li><a href="podcasts-video.html">PODCASTS &amp; VIDEO</a></li>
+                <li><a href="speaker-media.html">MEDIA</a></li>
+                <li><a href="podcasts-video.html" class="nav-tiptv" aria-label="TIPTV"><span class="tiptv-wordmark">TIP TV</span></a></li>
                 <li><a href="books-store.html">BOOKS &amp; STORE</a></li>
                 <li><a href="contact.html">CONTACT RICK</a></li>
+                <li class="nav-phone-item"><a href="tel:407-490-5022">407-490-5022</a></li>
             </ul>
-        </nav>
+            </nav>
+            <div class="header-end">
+                <a href="tel:407-490-5022" class="phone">407-490-5022</a>
+                <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
+            </div>
+        </div>
     </header>
 
     <main>
 
         <!-- ===== HERO ===== -->
         <section class="hero" aria-label="Hero">
-            <div class="hero-header-shadow"></div>
-            <!-- TODO: Add Rick's hero photo as background-image layer when provided -->
+            <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+            <div class="hero-burst" aria-hidden="true"></div>
             <div class="hero-inner">
-                <p class="hero-eyebrow">Transform Your Life</p>
-                <h1 class="hero-name">Richard L. Senninger</h1>
-                <p class="hero-authority">Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher</p>
-                <div class="hero-cta-row">
-                    <a href="meet-rick.html" class="cta-button">Learn More</a>
-                    <a href="tel:407-490-5022" class="cta-phone-btn">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.9.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-                        407-490-5022
-                    </a>
+
+                <!-- LEFT: Content -->
+                <div class="hero-content">
+                    <p class="hero-eyebrow">Academic Authority on Near Death Experiences &amp; Life After Life</p>
+                    <h1 class="hero-name-script"><img src="images/rick-signature.svg?v=2" alt="Richard L. Senninger"></h1>
+                    <p class="hero-tagline">Are Current Explanations Complete?</p>
+                    <p class="hero-sub">No Metaphysical Claims. No Spiritual Assertions.</p>
+                    <div class="hero-cta-row">
+                        <a href="meet-rick.html" class="cta-button">Meet Rick</a>
+                        <a href="Life_After_Life_CMC_Method_White_Paper.pdf" download class="cta-button-gold">Download Research</a>
+                    </div>
                 </div>
+
+                <!-- RIGHT: Portrait -->
+                <div class="hero-portrait" aria-hidden="true">
+                    <div class="portrait-glow"></div>
+                    <img src="images/Pucture_for_Meet_Founder_3.webp"
+                         alt="Richard L. Senninger — Clinical Hypnotherapist &amp; Consciousness Researcher"
+                         class="portrait-img"
+                         width="520" height="780"
+                         loading="eager"
+                         fetchpriority="high">
+                </div>
+
             </div>
         </section>
 
         <!-- ===== THREE FEATURED MESSAGES ===== -->
-        <div class="messages-section">
+        <div class="messages-section anim-up">
             <div class="messages-inner">
 
                 <!-- Message 1: The Statement -->
@@ -85,7 +97,7 @@
                 <!-- Message 3: The Credentials -->
                 <div class="message-credentials">
                     <div class="credential-badge">
-                        <p class="credential-badge-text">National Award-Winning Family Service Counselor</p>
+                        <p class="credential-badge-text">National Award-Winning Counselor</p>
                     </div>
                     <div class="credential-separator" aria-hidden="true">&bull;</div>
                     <div class="credential-badge">
@@ -97,7 +109,7 @@
         </div>
 
         <!-- ===== AREAS OF AUTHORITY RIBBON ===== -->
-        <div class="authority-ribbon">
+        <div class="authority-ribbon anim-fade">
             <div class="authority-ribbon-inner">
                 <span class="authority-label">GRIEF</span>
                 <span class="authority-sep" aria-hidden="true">&bull;</span>
@@ -112,7 +124,7 @@
         </div>
 
         <!-- ===== FEATURED RESEARCH ===== -->
-        <div class="white-paper-section">
+        <div class="white-paper-section anim-up">
             <div class="white-paper-container">
                 <div class="white-paper-text">
                     <h3 class="white-paper-label">Featured Research</h3>
@@ -132,7 +144,7 @@
         </div>
 
         <!-- ===== FEATURE CARD GRID ===== -->
-        <section class="feature-grid-section">
+        <section class="feature-grid-section anim-up">
             <h2 class="section-title-gold">Explore Rick&rsquo;s World</h2>
             <div class="section-rule"></div>
             <div class="feature-grid">
@@ -152,7 +164,7 @@
                 <a href="meet-rick.html" class="feature-card" aria-label="About Richard">
                     <!-- TODO: Replace with final approved headshot -->
                     <picture>
-                        <img src="images/About_Rick_Image_ref.png" alt="About Richard L. Senninger" class="feature-card-img" loading="lazy">
+                        <img src="images/Pucture_for_Meet_Founder_3.webp" alt="About Richard L. Senninger" class="feature-card-img" loading="lazy">
                     </picture>
                     <div class="feature-card-body">
                         <div class="feature-card-label">About Richard</div>
@@ -163,7 +175,7 @@
 
                 <a href="speaker-media.html" class="feature-card" aria-label="Speaking Engagements">
                     <picture>
-                        <img src="images/Media_and_Speaker_page_ref.png" alt="Rick Senninger — Speaker &amp; Media" class="feature-card-img" loading="lazy">
+                        <img src="images/Media_and_Speaker_page_ref.png" alt="Rick Senninger — Media" class="feature-card-img" loading="lazy">
                     </picture>
                     <div class="feature-card-body">
                         <div class="feature-card-label">Speaking Engagements</div>
@@ -189,7 +201,7 @@
         </section>
 
         <!-- ===== AS FEATURED IN ===== -->
-        <div class="media-section">
+        <div class="media-section anim-up">
             <h2>As Featured In</h2>
             <div class="media-logos">
                 <img src="images/NBC_LOGO.png" alt="NBC" loading="lazy">
@@ -216,7 +228,20 @@
         </div>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+${TOAST_HTML}
+        <!-- Inspired Thinking Community subscribe toast -->
+    <div class="subscribe-toast" role="dialog" aria-labelledby="subscribe-toast-title" aria-describedby="subscribe-toast-desc">
+        <button class="subscribe-toast-close" aria-label="Close subscribe panel">&times;</button>
+        <div class="subscribe-toast-eyebrow">Inspired Thinking</div>
+        <h4 id="subscribe-toast-title">Join Rick&#39;s <em>Circle</em></h4>
+        <p id="subscribe-toast-desc">Insights on consciousness, hypnotherapy, and human transformation &mdash; delivered to your inbox.</p>
+        <form class="subscribe-toast-form" novalidate>
+            <input type="email" name="email" placeholder="your.com" required autocomplete="email" aria-label="Email address">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="subscribe-toast-feedback" aria-live="polite"></div>
+    </div>
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
 
     <script>
         // Back to top
@@ -230,5 +255,6 @@
             hdr.classList.toggle('scrolled', window.scrollY > 80);
         });
     </script>
+    <script src="js/animations.js?v=7"></script>
 </body>
 </html>

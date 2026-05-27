@@ -28,11 +28,11 @@
     },
     {
       "id": "free-004",
-      "title": "Relaxation & Rejuvenation",
-      "description": "Restore your energy and sense of calm with this deeply relaxing guided hypnosis session by Rick Senninger.",
-      "image": "images/mp3_relaxation_rejuvenation.webp",
-      "file": "audio/Relaxation_and_Rejuvenation.mp3",
-      "type": "MP3 Audio"
+      "title": "Effective Method for ADHD",
+      "description": "A practitioner-developed hypnotherapy guide by Rick Senninger for managing ADHD — practical techniques to quiet mental noise, sharpen focus, and regain control of attention.",
+      "image": "images/effective_adhd_guide_thumbnail.png",
+      "file": "Effective_Method_for_ADHD.docx",
+      "type": "Hypnotherapy Guide"
     },
     {
       "id": "free-005",
