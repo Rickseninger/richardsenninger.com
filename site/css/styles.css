@@ -3447,6 +3447,58 @@ body.cart-open .subscribe-toast {
   pointer-events: none !important;
 }
 
+/* YouTube subscribe CTA — used on TIPTV page */
+.youtube-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  background: linear-gradient(180deg, #FF1F1F 0%, #C70000 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow:
+    0 4px 18px rgba(199, 0, 0, 0.35),
+    0 0 24px rgba(255, 31, 31, 0.18);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+.youtube-cta:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+  box-shadow:
+    0 6px 26px rgba(199, 0, 0, 0.50),
+    0 0 36px rgba(255, 31, 31, 0.28);
+}
+.youtube-cta svg { flex-shrink: 0; }
+
+/* Footer social links — small icon-only row beside the brand copy */
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.85rem;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(201, 149, 42, 0.30);
+  border-radius: 50%;
+  color: rgba(201, 149, 42, 0.75);
+  transition: color 0.22s ease, border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
+}
+.footer-social a:hover {
+  color: var(--gold-light);
+  border-color: rgba(201, 149, 42, 0.70);
+  background: rgba(201, 149, 42, 0.08);
+  transform: translateY(-1px);
+}
+
 /* Media coordinator contact block — used in Speaker & Media page */
 .media-coordinator-block {
   margin-top: 1.25rem;
