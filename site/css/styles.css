@@ -3173,7 +3173,11 @@ footer {
   z-index: 0;
   animation: burstPulse 6s ease-in-out infinite;
 }
-.spotlight > * { position: relative; z-index: 1; }
+/* Stack content above the absolute-positioned glow/burst, but EXCLUDE the burst
+   itself — without this :not() the universal selector outranks .spotlight-burst's
+   `position: absolute` and the burst gets shoved into normal flow as a 460px-tall
+   block, creating a huge whitespace void inside the section. */
+.spotlight > *:not(.spotlight-burst) { position: relative; z-index: 1; }
 
 /* --- Section tint (alternating background for inner-page rhythm) --- */
 .section-tint {
