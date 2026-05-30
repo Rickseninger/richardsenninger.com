@@ -292,9 +292,23 @@ app.post(
       const printifyItemsRaw = stored ? stored.printifyItems : [];
       const shippingData = stored ? stored.shipping : {};
 
+      // SAFETY GUARD: Printify has no test/sandbox environment. Every Printify order
+      // is real, charges the merchant, and ships. When Stripe is in test mode (any key
+      // starting with sk_test_), we MUST NOT create Printify orders — log the would-be
+      // order so QA flows still complete visually, but no real fulfillment fires.
+      const isStripeTestMode = (process.env.STRIPE_SECRET_KEY || '').startsWith('sk_test_');
+      if (isStripeTestMode) {
+        console.log(
+          `[TEST MODE] Stripe is in test mode — SKIPPING Printify order creation. ` +
+          `Items that WOULD have been ordered:`,
+          JSON.stringify(printifyItemsRaw || [], null, 2)
+        );
+      }
+
       // Create Printify order for POD items
       const apiKey = process.env.PRINTIFY_API_KEY;
       if (
+        !isStripeTestMode &&
         printifyItemsRaw && printifyItemsRaw.length > 0 &&
         apiKey &&
         apiKey !== 'your_printify_api_key_here'
