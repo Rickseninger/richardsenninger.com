@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" preserveAspectRatio="xMidYMid meet">
+  <!-- Background — radial navy gradient -->
+  <defs>
+    <radialGradient id="cover-bg" cx="50%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#1E3D6E"/>
+      <stop offset="100%" stop-color="#05080F"/>
+    </radialGradient>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E3B84A"/>
+      <stop offset="100%" stop-color="#A67820"/>
+    </linearGradient>
+    <linearGradient id="rule-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="50%" stop-color="#C9952A"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Cover background -->
+  <rect width="600" height="900" fill="url(#cover-bg)"/>
+
+  <!-- Subtle constellation dots -->
+  <circle cx="80"  cy="120" r="1.6" fill="#F0C040" opacity="0.5"/>
+  <circle cx="510" cy="180" r="2"   fill="#F0C040" opacity="0.45"/>
+  <circle cx="120" cy="780" r="1.8" fill="#F0C040" opacity="0.4"/>
+  <circle cx="500" cy="820" r="1.4" fill="#F0C040" opacity="0.5"/>
+  <circle cx="350" cy="80"  r="1.2" fill="#F0C040" opacity="0.4"/>
+  <circle cx="220" cy="850" r="1"   fill="#F0C040" opacity="0.35"/>
+
+  <!-- Gold inner border frame -->
+  <rect x="32" y="32" width="536" height="836" fill="none"
+        stroke="url(#gold-grad)" stroke-width="1.5" opacity="0.45"/>
+  <rect x="40" y="40" width="520" height="820" fill="none"
+        stroke="#C9952A" stroke-width="0.6" opacity="0.35"/>
+
+  <!-- Top ornament / number -->
+  <text x="300" y="200" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="22" font-weight="400" letter-spacing="6"
+        fill="#C9952A" opacity="0.85">A COLLECTION FROM</text>
+
+  <!-- Author hint -->
+  <text x="300" y="232" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-size="18"
+        fill="#C4BFB5" opacity="0.75">Richard L. Senninger</text>
+
+  <!-- Top rule -->
+  <line x1="180" y1="270" x2="420" y2="270" stroke="url(#rule-grad)" stroke-width="1"/>
+
+  <!-- BIG TITLE -->
+  <text x="300" y="400" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="92" font-weight="700" letter-spacing="-2"
+        fill="url(#gold-grad)">10,000</text>
+  <text x="300" y="490" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="76" font-weight="700" letter-spacing="4"
+        fill="#F0EDE6">FUNERALS</text>
+
+  <!-- Middle rule -->
+  <line x1="220" y1="540" x2="380" y2="540" stroke="url(#rule-grad)" stroke-width="1"/>
+
+  <!-- Subtitle -->
+  <text x="300" y="595" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-size="32" font-weight="400"
+        fill="#C9952A">5 Minute Life Lessons</text>
+
+  <!-- Bottom decorative dot cluster -->
+  <circle cx="280" cy="700" r="2.5" fill="#C9952A"/>
+  <circle cx="300" cy="700" r="2.5" fill="#C9952A"/>
+  <circle cx="320" cy="700" r="2.5" fill="#C9952A"/>
+
+  <!-- Bottom rule -->
+  <line x1="200" y1="740" x2="400" y2="740" stroke="url(#rule-grad)" stroke-width="1"/>
+
+  <!-- Bottom — small caps brand mark -->
+  <text x="300" y="790" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="14" font-weight="400" letter-spacing="5"
+        fill="#C4BFB5" opacity="0.65">THREE-TIME NATIONAL AWARD WINNER</text>
+
+  <text x="300" y="820" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="12" font-style="italic" letter-spacing="2"
+        fill="#C9952A" opacity="0.75">for Excellence in Counseling</text>
+</svg>
