@@ -3447,6 +3447,80 @@ body.cart-open .subscribe-toast {
   pointer-events: none !important;
 }
 
+/* "Coming Soon" announcement block — TIPTV page */
+.coming-soon-announcement {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(28, 48, 84, 0.65) 0%, rgba(13, 27, 46, 0.65) 100%);
+  border: 1px solid rgba(201, 149, 42, 0.32);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+.coming-soon-announcement::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 380px;
+  background: radial-gradient(ellipse, rgba(201, 149, 42, 0.18) 0%, transparent 65%);
+  pointer-events: none;
+  filter: blur(30px);
+  z-index: 0;
+}
+.coming-soon-announcement > * { position: relative; z-index: 1; }
+.coming-soon-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid rgba(201, 149, 42, 0.40);
+  border-radius: 100px;
+  background: rgba(201, 149, 42, 0.08);
+  margin-bottom: 2rem;
+}
+.coming-soon-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem;
+}
+.coming-soon-rule {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: 1.5rem auto 2rem;
+}
+.coming-soon-show {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 0 40px rgba(201, 149, 42, 0.40), 0 0 80px rgba(201, 149, 42, 0.18);
+}
+.coming-soon-host {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--off-white);
+  font-style: italic;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
 /* YouTube subscribe CTA — used on TIPTV page */
 .youtube-cta {
   display: inline-flex;
