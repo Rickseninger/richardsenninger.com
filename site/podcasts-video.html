@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
-    <link rel="stylesheet" href="css/styles.css?v=22">
+    <link rel="stylesheet" href="css/styles.css?v=23">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGBF4M2V5D"></script>
@@ -70,6 +70,26 @@
             </div>
             <p class="tiptv-banner-tagline">Listen, watch, and explore &mdash; conversations that challenge, inspire, and transform.</p>
         </div>
+
+        <!-- Live Now — hidden unless Rick is currently streaming on YouTube -->
+        <section id="yt-live-section" class="yt-live-section" hidden>
+            <div class="yt-live-inner">
+                <div class="yt-live-header">
+                    <span class="yt-live-badge"><span class="yt-live-dot"></span>LIVE NOW</span>
+                    <h2 class="yt-live-title" id="yt-live-title">Rick is live on YouTube</h2>
+                </div>
+                <div class="yt-live-player">
+                    <iframe id="yt-live-iframe"
+                            title="Richard L. Senninger Live on YouTube"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <a id="yt-live-watch" href="https://www.youtube.com/@Tiphypnosis" target="_blank" rel="noopener noreferrer" class="yt-live-watch-btn">
+                    Watch on YouTube &rarr;
+                </a>
+            </div>
+        </section>
 
         <!-- Coming Soon Announcement -->
         <section class="anim-up" style="padding: 5rem 2rem;">
@@ -167,5 +187,49 @@
         window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 80); });
     </script>
     <script src="js/animations.js?v=7"></script>
+    <script>
+    // YouTube live-stream poller — shows the embed only when Rick is actually streaming
+    (function () {
+        var section = document.getElementById('yt-live-section');
+        var iframe  = document.getElementById('yt-live-iframe');
+        var titleEl = document.getElementById('yt-live-title');
+        var watchA  = document.getElementById('yt-live-watch');
+        if (!section || !iframe) return;
+
+        var currentVideoId = null;
+        var POLL_MS = 90 * 1000;
+
+        function reveal(data) {
+            if (data.videoId && data.videoId !== currentVideoId) {
+                currentVideoId = data.videoId;
+                iframe.src = 'https://www.youtube.com/embed/' + encodeURIComponent(data.videoId) +
+                             '?autoplay=1&mute=1&rel=0';
+            }
+            if (titleEl && data.title) titleEl.textContent = data.title;
+            if (watchA  && data.watchUrl) watchA.href = data.watchUrl;
+            if (section.hasAttribute('hidden')) {
+                section.removeAttribute('hidden');
+                requestAnimationFrame(function () { section.classList.add('yt-visible'); });
+            }
+        }
+        function hide() {
+            currentVideoId = null;
+            section.classList.remove('yt-visible');
+            section.setAttribute('hidden', '');
+            iframe.src = '';
+        }
+        function check() {
+            fetch('/api/youtube/live', { cache: 'no-cache' })
+                .then(function (r) { return r.ok ? r.json() : { live: false }; })
+                .then(function (d) { (d && d.live) ? reveal(d) : hide(); })
+                .catch(function () {});
+        }
+        check();
+        setInterval(check, POLL_MS);
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) check();
+        });
+    }());
+    </script>
 </body>
 </html>

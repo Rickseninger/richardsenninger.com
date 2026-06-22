@@ -470,6 +470,95 @@ app.get('/api/refresh-products', async (req, res) => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// YouTube live status — checks if Rick is currently streaming on @Tiphypnosis
+// ---------------------------------------------------------------------------
+// Uses channels.list + playlistItems.list + videos.list (with
+// liveStreamingDetails) instead of search.list, because search.list has a
+// 10–30 min indexing lag. The uploads-playlist route picks up streams within
+// seconds and costs only ~2 quota units per check (vs 100 for search).
+const YT_HANDLE = 'Tiphypnosis';
+let ytChannelDataCache = null;
+let ytLiveCache = { data: null, timestamp: 0 };
+const YT_LIVE_TTL = 90 * 1000;
+
+async function resolveYouTubeChannel(apiKey) {
+  if (ytChannelDataCache) return ytChannelDataCache;
+  const url = `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle=%40${encodeURIComponent(YT_HANDLE)}&key=${encodeURIComponent(apiKey)}`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`YouTube channel resolve failed: ${r.status}`);
+  const data = await r.json();
+  const item = data.items && data.items[0];
+  if (!item) throw new Error('YouTube channel handle could not be resolved');
+  ytChannelDataCache = {
+    channelId: item.id,
+    uploadsPlaylistId: item.contentDetails.relatedPlaylists.uploads,
+  };
+  console.log(`[YT] Resolved @${YT_HANDLE} -> channel=${item.id}`);
+  return ytChannelDataCache;
+}
+
+app.get('/api/youtube/live', async (req, res) => {
+  const apiKey = process.env.GOOGLE_API_KEY;
+  const forceRefresh = req.query.refresh === '1';
+  const debug = req.query.debug === '1';
+  if (!apiKey) {
+    return res.set('Cache-Control', 'public, max-age=60').json({ live: false });
+  }
+
+  const now = Date.now();
+  if (!forceRefresh && !debug && ytLiveCache.data && now - ytLiveCache.timestamp < YT_LIVE_TTL) {
+    return res.set('Cache-Control', 'public, max-age=60').json(ytLiveCache.data);
+  }
+
+  try {
+    const { uploadsPlaylistId } = await resolveYouTubeChannel(apiKey);
+
+    // Step 1: latest 5 uploads (catches a live stream within seconds of starting)
+    const plUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=contentDetails&playlistId=${encodeURIComponent(uploadsPlaylistId)}&maxResults=5&key=${encodeURIComponent(apiKey)}`;
+    const plRes = await fetch(plUrl);
+    if (!plRes.ok) throw new Error(`playlistItems failed: ${plRes.status}`);
+    const plData = await plRes.json();
+    const videoIds = (plData.items || []).map(i => i.contentDetails.videoId).filter(Boolean);
+
+    if (!videoIds.length) {
+      const payload = { live: false };
+      ytLiveCache = { data: payload, timestamp: now };
+      return res.set('Cache-Control', 'public, max-age=60').json(payload);
+    }
+
+    // Step 2: which (if any) is currently live
+    const vUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,liveStreamingDetails&id=${videoIds.join(',')}&key=${encodeURIComponent(apiKey)}`;
+    const vRes = await fetch(vUrl);
+    if (!vRes.ok) throw new Error(`videos.list failed: ${vRes.status}`);
+    const vData = await vRes.json();
+
+    const liveItem = (vData.items || []).find(v => {
+      const d = v.liveStreamingDetails;
+      return d && d.actualStartTime && !d.actualEndTime;
+    });
+
+    const payload = liveItem
+      ? {
+          live: true,
+          videoId: liveItem.id,
+          title: liveItem.snippet.title,
+          thumbnail: ((liveItem.snippet.thumbnails || {}).maxres
+                   || (liveItem.snippet.thumbnails || {}).high
+                   || (liveItem.snippet.thumbnails || {}).default || {}).url || null,
+          watchUrl: `https://www.youtube.com/watch?v=${liveItem.id}`,
+          startedAt: liveItem.liveStreamingDetails.actualStartTime,
+        }
+      : { live: false };
+
+    ytLiveCache = { data: payload, timestamp: now };
+    res.set('Cache-Control', 'public, max-age=60').json(payload);
+  } catch (err) {
+    console.error('[YT] live check error:', err.message);
+    res.set('Cache-Control', 'no-store').json(ytLiveCache.data || { live: false });
+  }
+});
+
 // Google Calendar events
 let gcalCache = { events: [], timestamp: 0 };
 const GCAL_TTL = 15 * 60 * 1000;
