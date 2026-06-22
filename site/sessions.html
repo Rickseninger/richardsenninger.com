@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions | Richard L. Senninger — Group &amp; Private 1-on-1 Hypnotherapy</title>
+    <meta name="description" content="Two paths into the work with Richard L. Senninger, CGC, CHt. — Group Sessions starting at $49/month per group and Private 1-on-1 Sessions starting at $260 per 60-minute session. Free 30-minute consultation.">
+    <link rel="canonical" href="https://www.richardsenninger.com/sessions.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.richardsenninger.com/sessions.html">
+    <meta property="og:site_name" content="Richard L. Senninger">
+    <meta property="og:title" content="Sessions | Richard L. Senninger">
+    <meta property="og:description" content="Group and Private 1-on-1 hypnotherapy sessions with 3x National Award-Winning Counselor Rick Senninger.">
+    <meta property="og:image" content="https://www.richardsenninger.com/images/Pucture_for_Meet_Founder_3.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sessions | Richard L. Senninger">
+    <meta name="twitter:description" content="Group and Private 1-on-1 hypnotherapy sessions with Rick Senninger.">
+    <meta name="twitter:image" content="https://www.richardsenninger.com/images/Pucture_for_Meet_Founder_3.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Richard L. Senninger — Hypnotherapy Sessions",
+      "image": "https://www.richardsenninger.com/images/Pucture_for_Meet_Founder_3.webp",
+      "url": "https://www.richardsenninger.com/sessions.html",
+      "telephone": "+1-407-490-5022",
+      "priceRange": "$$",
+      "description": "Group and Private 1-on-1 hypnotherapy sessions with Richard L. Senninger, CGC, CHt.",
+      "address": { "@type": "PostalAddress", "addressLocality": "Orlando", "addressRegion": "FL", "addressCountry": "US" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Session Offerings",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Group Session" }, "priceSpecification": { "@type": "PriceSpecification", "price": "49.00", "priceCurrency": "USD", "unitText": "MONTH" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Private 1-on-1 Session" }, "priceSpecification": { "@type": "PriceSpecification", "price": "260.00", "priceCurrency": "USD", "unitText": "60-minute session" } }
+        ]
+      }
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <link rel="stylesheet" href="css/styles.css?v=22">
+
+    <!-- Page-scoped styles for the Sessions comparison -->
+    <style>
+      .sessions-wrap { max-width: 1320px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
+
+      .sessions-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: stretch;
+      }
+      @media (max-width: 1024px) {
+        .sessions-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      }
+
+      .session-card {
+        background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy-deep) 100%);
+        border: 1px solid var(--navy-border);
+        border-radius: 14px;
+        padding: 2.5rem 2.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .session-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.7;
+      }
+
+      .session-portrait {
+        margin: -2.5rem -2.25rem 0;
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+      }
+      .session-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 18%;
+        display: block;
+      }
+      .session-portrait::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(13,27,46,0) 50%, var(--navy-mid) 100%);
+        pointer-events: none;
+      }
+
+      .session-card-eyebrow {
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .session-card-title {
+        font-family: var(--font-serif);
+        font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+        font-weight: 700;
+        color: var(--off-white);
+        line-height: 1.15;
+        letter-spacing: 0.01em;
+      }
+      .session-card-lede {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .session-meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.55rem 1rem;
+        background: var(--gold-mist);
+        border: 1px solid var(--border-accent);
+        border-radius: 999px;
+        color: var(--gold-light);
+        font-size: 0.85rem;
+        font-weight: 500;
+        align-self: flex-start;
+      }
+
+      /* Two mini-cards inside Group Sessions */
+      .subgroup-pair {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      @media (max-width: 640px) {
+        .subgroup-pair { grid-template-columns: 1fr; }
+      }
+      .subgroup {
+        background: rgba(13, 27, 46, 0.55);
+        border: 1px solid var(--navy-border);
+        border-radius: 10px;
+        padding: 1.35rem 1.25rem 1.15rem;
+        display: flex;
+        flex-direction: column;
+      }
+      .subgroup-mark {
+        width: 36px; height: 36px;
+        border-radius: 50%;
+        background: var(--gold-mist);
+        border: 1px solid var(--border-accent);
+        color: var(--gold);
+        display: grid;
+        place-items: center;
+        margin-bottom: 0.65rem;
+      }
+      .subgroup-label {
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+      .subgroup-title {
+        font-family: var(--font-serif);
+        font-size: 1.05rem;
+        color: var(--off-white);
+        font-weight: 600;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+      }
+      .subgroup-bullets { list-style: none; padding: 0; margin: 0; }
+      .subgroup-bullets li {
+        position: relative;
+        padding-left: 1.1rem;
+        margin: 0.3rem 0;
+        font-size: 0.88rem;
+        color: var(--off-white);
+        line-height: 1.5;
+      }
+      .subgroup-bullets li::before {
+        content: '\2713';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--gold);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .subgroup-caption {
+        margin-top: auto;
+        padding-top: 0.85rem;
+        border-top: 1px dashed var(--border-subtle);
+        font-size: 0.82rem;
+        font-style: italic;
+        color: var(--text-muted);
+      }
+
+      .icon-points { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.1rem; }
+      .icon-points li { display: flex; gap: 0.9rem; align-items: flex-start; }
+      .icon-point-mark {
+        flex: 0 0 auto;
+        width: 38px; height: 38px;
+        border-radius: 50%;
+        background: var(--gold-mist);
+        border: 1px solid var(--border-accent);
+        display: grid;
+        place-items: center;
+        color: var(--gold);
+      }
+      .icon-point-text strong {
+        display: block;
+        color: var(--off-white);
+        font-family: var(--font-serif);
+        font-size: 1.05rem;
+        margin-bottom: 0.15rem;
+      }
+      .icon-point-text span { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.55; }
+
+      .support-band {
+        background: rgba(13, 27, 46, 0.55);
+        border: 1px solid var(--navy-border);
+        border-radius: 10px;
+        padding: 1.25rem 1.5rem;
+      }
+      .support-band-title {
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 0.75rem;
+      }
+      .support-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem 0.85rem;
+        font-size: 0.88rem;
+        color: var(--off-white);
+      }
+      .support-chips span { white-space: nowrap; }
+      .support-chips .sep { color: var(--gold-dark); }
+
+      .quote-band {
+        background: rgba(201, 149, 42, 0.07);
+        border-left: 3px solid var(--gold);
+        border-radius: 4px;
+        padding: 1.1rem 1.4rem;
+      }
+      .quote-band-head {
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .quote-band p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; font-style: italic; }
+
+      .closing-band {
+        text-align: center;
+        padding: 1.25rem 1rem;
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .closing-band-head {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 0.55rem;
+      }
+      .closing-band p { color: var(--text-secondary); font-size: 0.92rem; font-style: italic; }
+
+      .price-band {
+        margin-top: auto;
+        padding: 1.6rem 1.4rem 1.4rem;
+        border-top: 1px solid var(--border-accent);
+        border-bottom: 1px solid var(--border-accent);
+        background: linear-gradient(180deg, rgba(201,149,42,0.10), rgba(201,149,42,0.04));
+        border-radius: 8px;
+      }
+      .price-band-label {
+        font-family: var(--font-sans);
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .price-table {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .price-table li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: baseline;
+        gap: 0.5rem 1rem;
+        padding-bottom: 0.7rem;
+        border-bottom: 1px dashed var(--border-subtle);
+      }
+      .price-table li:last-child { border-bottom: none; padding-bottom: 0; }
+      .price-row-name {
+        font-family: var(--font-serif);
+        font-size: 1.05rem;
+        color: var(--off-white);
+        font-weight: 600;
+      }
+      .price-row-amount {
+        font-family: var(--font-serif);
+        font-size: 1.85rem;
+        color: var(--gold-light);
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      .price-row-amount .cents {
+        font-size: 0.55em;
+        font-weight: 500;
+        color: var(--gold-dark);
+      }
+      .price-row-note {
+        grid-column: 1 / -1;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-style: italic;
+        margin-top: -0.15rem;
+      }
+      .price-row-note strong { color: var(--gold-light); font-style: normal; font-weight: 600; }
+      .price-footnote {
+        margin-top: 0.85rem;
+        padding-top: 0.85rem;
+        border-top: 1px dashed var(--border-subtle);
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--text-secondary);
+        text-align: center;
+      }
+
+      .card-cta {
+        text-align: center;
+        padding-top: 0.5rem;
+      }
+      .card-cta .cta-button-gold { margin-top: 0.5rem; }
+      .card-cta .cta-eyebrow {
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .card-cta .cta-lede { color: var(--text-secondary); font-size: 0.92rem; margin: 0 0 0.85rem; }
+      .card-cta .cta-foot { color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-top: 0.65rem; }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGBF4M2V5D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LGBF4M2V5D');
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="award-banner">
+            3x National Award for Excellence &bull; Clinical Hypnotherapist &bull; Author &bull; Speaker &bull; Consciousness Researcher
+        </div>
+        <div class="header-main">
+            <div class="header-brand"><div class="header-identity">
+                    <img src="images/rick-signature.svg?v=2" alt="Richard L. Senninger" class="header-signature">
+                    <div class="header-tagline">Transform Your Life</div>
+                </div>
+            </div>
+            <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="meet-rick.html">MEET RICK</a></li>
+                <li><a href="sessions.html" class="active">SESSIONS</a></li>
+                <li><a href="speaker-media.html">MEDIA</a></li>
+                <li><a href="podcasts-video.html" class="nav-tiptv" aria-label="TIPTV"><span class="tiptv-wordmark">TIP TV</span></a></li>
+                <li><a href="books-store.html">BOOKS &amp; STORE</a></li>
+                <li><a href="contact.html">CONTACT RICK</a></li>
+                <li class="nav-phone-item"><a href="tel:407-490-5022">407-490-5022</a></li>
+            </ul>
+            </nav>
+            <div class="header-end">
+                <a href="tel:407-490-5022" class="phone">407-490-5022</a>
+                <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('nav').classList.toggle('active')">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ===== Page hero ===== -->
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <span class="page-hero-eyebrow">Sessions</span>
+                <h1>Two Paths Into the <em>Work</em></h1>
+                <div class="page-hero-rule"></div>
+                <p class="page-hero-sub">Choose the format that fits your goals &mdash; both begin with a free 30-minute consultation.</p>
+            </div>
+        </section>
+
+        <!-- ===== Sessions comparison ===== -->
+        <div class="sessions-wrap">
+            <div class="sessions-grid">
+
+                <!-- ============ GROUP SESSIONS ============ -->
+                <article class="session-card anim-up">
+                    <div class="session-card-head">
+                        <div class="session-card-eyebrow">Group Sessions</div>
+                        <h2 class="session-card-title">Insight. Connection. Transformation.</h2>
+                    </div>
+
+                    <div class="session-meta">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05C16.16 13.66 17 14.83 17 16.5V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        Up to 50 Participants &nbsp;&middot;&nbsp; 1 Hour, 2&times; / Week
+                    </div>
+
+                    <p class="session-card-lede">
+                        Engaging conversations, deeper understanding, and new perspectives that inspire personal growth and expand what&rsquo;s possible.
+                    </p>
+
+                    <div class="subgroup-pair">
+                        <div class="subgroup">
+                            <div class="subgroup-mark" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-12a8 8 0 0 1 16 0c0 7.5-8 12-8 12z"/><path d="M12 7v10"/><path d="M9 10c0-1 1-2 3-2s3 1 3 2-3 1-3 2"/></svg>
+                            </div>
+                            <span class="subgroup-label">Group A</span>
+                            <h3 class="subgroup-title">Personal Transformation &amp; The Human Experience</h3>
+                            <ul class="subgroup-bullets">
+                                <li>Personal growth &amp; self-awareness</li>
+                                <li>Relationships &amp; communication</li>
+                                <li>Confidence &amp; performance</li>
+                                <li>Stress, anxiety &amp; resilience</li>
+                                <li>Purpose, meaning &amp; fulfillment</li>
+                                <li>The power of thought, intention &amp; perspective</li>
+                            </ul>
+                            <p class="subgroup-caption">For those ready to grow personally and enjoy a more fulfilling life.</p>
+                        </div>
+
+                        <div class="subgroup">
+                            <div class="subgroup-mark" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 1 7 7c0 3-2 5-3.5 6.5C14 17 14 18 14 18h-4s0-1-1.5-2.5C7 14 5 12 5 9a7 7 0 0 1 7-7z"/></svg>
+                            </div>
+                            <span class="subgroup-label">Group B</span>
+                            <h3 class="subgroup-title">Life After Life &amp; Consciousness</h3>
+                            <ul class="subgroup-bullets">
+                                <li>Consciousness studies</li>
+                                <li>Near-death experiences</li>
+                                <li>Human perception &amp; awareness</li>
+                                <li>The nature of reality</li>
+                                <li>Scientific &amp; philosophical research</li>
+                                <li>Spiritual experiences &amp; transformation</li>
+                                <li>Science, philosophy &amp; human experience</li>
+                            </ul>
+                            <p class="subgroup-caption">For those seeking deeper understanding of consciousness and existence.</p>
+                        </div>
+                    </div>
+
+                    <div class="closing-band">
+                        <div class="closing-band-head">Enlightening. Invigorating. Educational.</div>
+                        <p>Leave each session with insight, inspiration, and new questions that move your life forward.</p>
+                    </div>
+
+                    <div class="price-band">
+                        <div class="price-band-label">Membership &mdash; LIVE IT (Inspired Thinking) Group</div>
+                        <ul class="price-table">
+                            <li>
+                                <div class="price-row-name">Annual</div>
+                                <div class="price-row-amount">$585<span class="cents">.00</span></div>
+                                <div class="price-row-note">or 3 payments of $195.00 &mdash; as low as <strong>$48.75 / month</strong></div>
+                            </li>
+                            <li>
+                                <div class="price-row-name">Six Months</div>
+                                <div class="price-row-amount">$330<span class="cents">.00</span></div>
+                                <div class="price-row-note">or 3 payments of $110.00</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-cta">
+                        <div class="cta-eyebrow">Take the First Step</div>
+                        <p class="cta-lede">Schedule your FREE 30-minute consultation today.</p>
+                        <a href="tel:407-490-5022" class="cta-button-gold">Call 407-490-5022</a>
+                        <p class="cta-foot">A simple conversation can change everything.</p>
+                    </div>
+                </article>
+
+                <!-- ============ PRIVATE 1-ON-1 SESSIONS ============ -->
+                <article class="session-card anim-up">
+                    <div class="session-card-head">
+                        <div class="session-card-eyebrow">Private 1-on-1 Sessions</div>
+                        <h2 class="session-card-title">Focused. Personal. Transformational.</h2>
+                    </div>
+
+                    <p class="session-card-lede">
+                        Personalized sessions with <strong>Richard L. Senninger, CGC, CHt.</strong> designed for measurable results and lasting change.
+                    </p>
+
+                    <ul class="icon-points">
+                        <li>
+                            <span class="icon-point-mark" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                            </span>
+                            <span class="icon-point-text">
+                                <strong>Specific Goals</strong>
+                                <span>We identify what matters most to you.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon-point-mark" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+                            </span>
+                            <span class="icon-point-text">
+                                <strong>Specific Approaches</strong>
+                                <span>Proven methods tailored to your unique needs.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon-point-mark" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+                            </span>
+                            <span class="icon-point-text">
+                                <strong>Specific Outcomes</strong>
+                                <span>Focused strategies that create real change.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon-point-mark" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            </span>
+                            <span class="icon-point-text">
+                                <strong>Measurable Results</strong>
+                                <span>Track progress. Achieve meaningful, lasting change.</span>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="support-band">
+                        <div class="support-band-title">Support for Life&rsquo;s Challenges &amp; Opportunities</div>
+                        <div class="support-chips">
+                            <span>Anxiety &amp; Stress</span><span class="sep">&bull;</span>
+                            <span>Confidence</span><span class="sep">&bull;</span>
+                            <span>Grief</span><span class="sep">&bull;</span>
+                            <span>Life Transitions</span><span class="sep">&bull;</span>
+                            <span>Performance Enhancement</span><span class="sep">&bull;</span>
+                            <span>Emotional Challenges</span><span class="sep">&bull;</span>
+                            <span>Personal Growth</span><span class="sep">&bull;</span>
+                            <span>and more&hellip;</span>
+                        </div>
+                    </div>
+
+                    <div class="quote-band">
+                        <div class="quote-band-head">Understanding. Listening. Relating. Results.</div>
+                        <p>These principles are the cornerstone of Rick&rsquo;s career and the foundation of Transforming Individual Performance. When change is required, these sessions are the answer.</p>
+                    </div>
+
+                    <div class="price-band">
+                        <div class="price-band-label">Private 1-on-1 with Rick Senninger</div>
+                        <ul class="price-table">
+                            <li>
+                                <div class="price-row-name">1st Session</div>
+                                <div class="price-row-amount">$585<span class="cents">.00</span></div>
+                            </li>
+                            <li>
+                                <div class="price-row-name">2nd Session</div>
+                                <div class="price-row-amount">$325<span class="cents">.00</span></div>
+                            </li>
+                            <li>
+                                <div class="price-row-name">3rd Session &amp; beyond</div>
+                                <div class="price-row-amount">$260<span class="cents">.00</span></div>
+                                <div class="price-row-note">as low as <strong>$260 per session</strong></div>
+                            </li>
+                        </ul>
+                        <p class="price-footnote">Packages available for those needing 4 to 8 sessions.</p>
+                    </div>
+
+                    <div class="card-cta">
+                        <div class="cta-eyebrow">Take the First Step</div>
+                        <p class="cta-lede">Schedule your FREE 30-minute consultation today.</p>
+                        <a href="tel:407-490-5022" class="cta-button-gold">Call 407-490-5022</a>
+                        <p class="cta-foot">A simple conversation can change everything.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>Richard L. Senninger</strong> &bull; Orlando, FL &bull; <strong><a href="tel:407-490-5022">407-490-5022</a></strong></p>
+                <p style="margin-top: 0.75rem;">&copy; 2026 RichardLSenninger.com. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@Tiphypnosis" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Rick on YouTube" title="Subscribe on YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/tiphypnosis/" target="_blank" rel="noopener noreferrer" aria-label="Follow Rick on Instagram" title="Follow on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg></a>
+                    <a href="https://www.facebook.com/share/1H6Um9hQSB/" target="_blank" rel="noopener noreferrer" aria-label="Follow Rick on Facebook" title="Follow on Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647z"/></svg></a>
+                </div>
+            </div>
+            <div class="disclaimer">
+                <p>Richard L. Senninger provides personal transformation coaching, clinical hypnotherapy, and motivational services. Services are not a replacement for licensed psychotherapy. Hypnotherapy is an avocational and vocational self-improvement method.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inspired Thinking Community subscribe toast -->
+    <div class="subscribe-toast" role="dialog" aria-labelledby="subscribe-toast-title" aria-describedby="subscribe-toast-desc">
+        <button class="subscribe-toast-close" aria-label="Close subscribe panel">&times;</button>
+        <div class="subscribe-toast-eyebrow">Inspired Thinking</div>
+        <h4 id="subscribe-toast-title">Join Rick&#39;s <em>Circle</em></h4>
+        <p id="subscribe-toast-desc">Insights on consciousness, hypnotherapy, and human transformation &mdash; delivered to your inbox.</p>
+        <form class="subscribe-toast-form" novalidate>
+            <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
+            <button type="submit">Subscribe</button>
+        </form>
+        <div class="subscribe-toast-feedback" aria-live="polite"></div>
+    </div>
+    <button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+    <script>
+        const btn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => { btn.classList.toggle('visible', window.scrollY > 400); });
+        const hdr = document.querySelector('header');
+        window.addEventListener('scroll', () => { hdr.classList.toggle('scrolled', window.scrollY > 80); });
+    </script>
+    <script src="js/animations.js?v=7"></script>
+</body>
+</html>
